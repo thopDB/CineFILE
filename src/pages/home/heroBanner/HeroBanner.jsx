@@ -58,6 +58,7 @@ const HeroBanner = () => {
             />
             <button
               type="submit"
+              className="but"
               onChange={(e) => setQuery(e.target.value)}
               onClick={submitHandler}
             >

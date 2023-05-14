@@ -110,9 +110,13 @@
                 cursor: pointer;
 
                 @include md {
-                    width: 140px;
+                    width: 130px;
                     height: 60px;
                     font-size: 18px;
+                }
+
+                &:hover {
+                    color: var(--black);
                 }
             }
         }

@@ -3,7 +3,8 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
@@ -14,9 +15,9 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [query, setQuery] = useState("");
-  const [showSearch, setShowSearch] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  const [shows, setShows] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,19 +47,19 @@ const Header = () => {
     if (event.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
       setTimeout(() => {
-        setShowSearch(false);
+        setShows(false);
       }, 1000);
     }
   };
 
   const openSearch = () => {
     setMobileMenu(false);
-    setShowSearch(true);
+    setShows(true);
   };
 
   const openMobileMenu = () => {
     setMobileMenu(true);
-    setShowSearch(false);
+    setShows(false);
   };
 
   const navigationHandler = (type) => {
@@ -97,18 +98,28 @@ const Header = () => {
           )}
         </div>
       </ContentWrapper>
-      {showSearch && (
-        <div className="searchBar">
+      {shows && (
+        <div className="modal">
           <ContentWrapper>
-            <div className="searchInput">
-              <input
+            {/* <input
                 type="text"
                 placeholder="Search for a movie or tv show...."
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyUp={searchQueryHandler}
-              />
-              <VscChromeClose onClick={() => setShowSearch(false)} />
-            </div>
+              /> */}
+            <Modal show={shows} onHide={() => setShows(false)}>
+              <Modal.Body>
+                Woohoo, you're reading this text in a modal!
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={() => setShows(false)}>
+                  Close
+                </Button>
+                <Button variant="primary" onClick={() => setShows(false)}>
+                  Save Changes
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </ContentWrapper>
         </div>
       )}
