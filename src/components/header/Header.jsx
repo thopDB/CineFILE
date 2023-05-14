@@ -88,7 +88,9 @@ const Header = () => {
             <HiOutlineSearch onClick={openSearch} />
           </li>
         </ul>
+        </ContentWrapper>
 
+        <ContentWrapper>
         <div className="mobileMenuItems">
           <HiOutlineSearch onClick={openSearch} />
           {mobileMenu ? (
