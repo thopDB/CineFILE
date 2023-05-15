@@ -11,7 +11,7 @@ import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import Img from "../../../components/lazyLoadImage/Img.jsx";
 import PosterFallback from "../../../assets/no-poster.png";
-import { PlayIcon } from "../Playbtn";
+import { SlControlPlay } from "react-icons/sl";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 
 const DetailsBanner = ({ video, crew }) => {
@@ -79,8 +79,14 @@ const DetailsBanner = ({ video, crew }) => {
                           setVideoId(video.key);
                         }}
                       >
-                        <PlayIcon />
-                        <span className="text">Watch Trailer</span>
+                        <span>
+                          <SlControlPlay size={20} />
+                        </span>
+                        {mediaType === "movie" ? (
+                          <span className="text">Watch Trailer</span>
+                        ) : (
+                          <span className="text">Watch Clip</span>
+                        )}
                       </div>
                     </div>
 

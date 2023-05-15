@@ -5,7 +5,7 @@ import Img from "../lazyLoadImage/Img";
 import PosterFallback from "../../assets/no-poster.png";
 import { useNavigate } from "react-router-dom";
 
-const PersonCard = ({ data }) => {
+const PersonCard = ({ data, fromSearch }) => {
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
   const posterUrl = data.profile_path
@@ -15,6 +15,7 @@ const PersonCard = ({ data }) => {
     <div className="personCard" onClick={() => navigate(`/${data.id}`)}>
       <div className="posterBlock">
         <Img className="posterImg" src={posterUrl} />
+        {!fromSearch}
       </div>
       <div className="textBlock">
         <span className="title">{data.name}</span>

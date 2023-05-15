@@ -10,6 +10,7 @@ import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
+import PersonCard from "../../components/personCard/PersonCard";
 
 const SearchResult = () => {
   const [data, setData] = useState(null);
@@ -69,10 +70,15 @@ const SearchResult = () => {
                 loader={<Spinner />}
               >
                 {data?.results.map((item, index) => {
-                  if (item.media_type === "person") return;
-                  return (
-                    <MovieCard key={index} data={item} fromSearch={true} />
-                  );
+                  if (item.media_type === "person") {
+                    return (
+                      <PersonCard key={index} data={item} fromSearch={true} />
+                    );
+                  } else {
+                    return (
+                      <MovieCard key={index} data={item} fromSearch={true} />
+                    );
+                  }
                 })}
               </InfiniteScroll>
             </>
