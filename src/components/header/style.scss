@@ -52,13 +52,13 @@
             height: 60px;
             display: flex;
             align-items: center;
-            margin: 10px 0 0 15px;
+            margin: 17px 0 0 21px;
             color: white;
             font-weight: 500;
             position: relative;
 
             &.searchIcon {
-                margin-right: 5;
+                margin-right: 3px;
 
             }
 
@@ -121,46 +121,9 @@
         }
     }
 
-    .modal {
-        animation: mobileMenu 0.3s ease forwards;
+    GoSearch {
+        padding: 5000px;
     }
-
-    // .searchBar {
-    //     width: 100%;
-    //     height: 60px;
-    //     background-color: white;
-    //     position: absolute;
-    //     top: 60px;
-    //     animation: mobileMenu 0.3s ease forwards;
-    //     .searchInput {
-    //         display: flex;
-    //         align-items: center;
-    //         height: 40px;
-    //         margin-top: 10px;
-    //         width: 100%;
-    //         svg {
-    //             font-size: 20px;
-    //             flex-shrink: 0;
-    //             margin-left: 10px;
-    //             cursor: pointer;
-    //         }
-    //         input {
-    //             width: 100%;
-    //             height: 50px;
-    //             background-color: white;
-    //             outline: 0;
-    //             border: 0;
-    //             border-radius: 30px 0 0 30px;
-    //             padding: 0 15px;
-    //             font-size: 14px;
-    //             @include md {
-    //                 height: 60px;
-    //                 font-size: 20px;
-    //                 padding: 0 30px;
-    //             }
-    //         }
-    //     }
-    // }
 }
 
 @keyframes mobileMenu {

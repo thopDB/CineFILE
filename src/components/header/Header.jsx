@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HiOutlineSearch } from "react-icons/hi";
+import { GoSearch } from "react-icons/go";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -62,6 +62,10 @@ const Header = () => {
     setShows(false);
   };
 
+  const resetForm = () => {
+    setQuery("");
+  };
+
   const navigationHandler = (type) => {
     if (type === "movie") {
       navigate("/explore/movie");
@@ -88,12 +92,12 @@ const Header = () => {
             People
           </li>
           <li className="menuItem">
-            <HiOutlineSearch onClick={openSearch} />
+            <GoSearch onClick={openSearch} />
           </li>
         </ul>
 
         <div className="mobileMenuItems">
-          <HiOutlineSearch onClick={openSearch} />
+          <GoSearch onClick={openSearch} />
           {mobileMenu ? (
             <VscChromeClose onClick={() => setMobileMenu(false)} />
           ) : (
@@ -102,29 +106,37 @@ const Header = () => {
         </div>
       </ContentWrapper>
       {shows && (
-        <div className="modal">
-          <ContentWrapper>
-            {/* <input
-                type="text"
-                placeholder="Search for a movie or tv show...."
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyUp={searchQueryHandler}
-              /> */}
-            <Modal show={shows} onHide={() => setShows(false)}>
-              <Modal.Body>
-                Woohoo, you're reading this text in a modal!
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={() => setShows(false)}>
-                  Close
-                </Button>
-                <Button variant="primary" onClick={() => setShows(false)}>
-                  Save Changes
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </ContentWrapper>
-        </div>
+        <ContentWrapper>
+          <Modal
+            size="lg"
+            show={shows}
+            onHide={() => setShows(false)}
+            className="input-group mb-3 shadow-none"
+          >
+            <Modal.Body className="input-group">
+              <form className="input-group">
+                {/* <span className="input-group-text border border-0 bg-light p-3 bg-opacity-0"> */}
+                <GoSearch className=" border border-0 bg-opacity-0 bg-light" />
+                {/* </span> */}
+                <input
+                  className="border border-0 form-control form-floating bg-light p-3 shadow-none"
+                  type="text"
+                  placeholder="Search for a movie or tv show...."
+                  onChange={(e) => setQuery(e.target.value)}
+                  onKeyUp={searchQueryHandler}
+                />
+                <span className="input-group-text border border-0 bg-light p-3 shadow-none">
+                  <button
+                    type="reset"
+                    onClick={() => resetForm()}
+                    class="btn-close shadow-none"
+                    aria-label="Clear the query"
+                  />
+                </span>
+              </form>
+            </Modal.Body>
+          </Modal>
+        </ContentWrapper>
       )}
     </header>
   );
