@@ -1,9 +1,9 @@
 # CINEFILE
 
-This is a website for accessing data regarding any Movies, TV Shows or Person
+    This is a website for accessing data regarding any Movies, TV Shows or Person
 
-This site is developed using Vite, React JS and TMDB API
+    This site is developed using Vite, React JS and TMDB API
 
-<!-- You can visit the live website here -->
+## You can visit the live website here
 
-<!-- cinefile.vercel.app -->
+https://cine-file.vercel.app
