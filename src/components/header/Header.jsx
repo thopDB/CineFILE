@@ -107,33 +107,26 @@ const Header = () => {
       </ContentWrapper>
       {shows && (
         <ContentWrapper>
-          <Modal
-            size="lg"
-            show={shows}
-            onHide={() => setShows(false)}
-            className="input-group mb-3 shadow-none"
-          >
-            <Modal.Body className="input-group">
-              <form className="input-group">
-                <span className="input-group-text border border-0 bg-light p-3 bg-opacity-0">
-                  <GoSearch />
-                </span>
-                <input
-                  className="border border-0 form-control form-floating bg-light p-3 shadow-none"
-                  type="text"
-                  placeholder="Search for a movie or tv show...."
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyUp={searchQueryHandler}
+          <Modal size="lg" show={shows} onHide={() => setShows(false)}>
+            <Modal.Body className="input-group body">
+              <span className="input-group-text border border-0 bg-light p-3 bg-opacity-0">
+                <GoSearch />
+              </span>
+              <input
+                className="border border-0 form-control form-floating bg-light p-3 shadow-none"
+                type="text"
+                placeholder="Search for a movie or tv show...."
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyUp={searchQueryHandler}
+              />
+              <span className="input-group-text border border-0 bg-light p-3 shadow-none">
+                <button
+                  type="reset"
+                  onClick={() => resetForm()}
+                  className="btn-close shadow-none"
+                  aria-label="Clear the query"
                 />
-                <span className="input-group-text border border-0 bg-light p-3 shadow-none">
-                  <button
-                    type="reset"
-                    onClick={() => resetForm()}
-                    class="btn-close shadow-none"
-                    aria-label="Clear the query"
-                  />
-                </span>
-              </form>
+              </span>
             </Modal.Body>
           </Modal>
         </ContentWrapper>
