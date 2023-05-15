@@ -47,6 +47,7 @@ const Header = () => {
       navigate(`/search/${query}`);
       setTimeout(() => {
         setShows(false);
+        setQuery("");
       }, 1000);
     }
   };
@@ -68,8 +69,10 @@ const Header = () => {
   const navigationHandler = (type) => {
     if (type === "movie") {
       navigate("/explore/movie");
-    } else {
+    } else if (type === "tv") {
       navigate("/explore/tv");
+    } else {
+      navigate("/people");
     }
     setMobileMenu(false);
   };
@@ -87,7 +90,7 @@ const Header = () => {
           <li className="menuItem" onClick={() => navigationHandler("tv")}>
             TV Shows
           </li>
-          <li className="menuItem" onClick={() => navigationHandler("tv")}>
+          <li className="menuItem" onClick={() => navigationHandler("people")}>
             People
           </li>
           <li className="menuItem">
@@ -107,25 +110,36 @@ const Header = () => {
       {shows && (
         <ContentWrapper>
           <Modal size="lg" show={shows} onHide={() => setShows(false)}>
-            <Modal.Body className="input-group body">
-              <span className="input-group-text border border-0 bg-light p-3 bg-opacity-0">
+            <Modal.Body className="input-group" style={{ padding: "0" }}>
+              <span className="input-group-text border-0 bg-light p-3 bg-opacity-0">
                 <GoSearch />
               </span>
               <input
                 className="border border-0 form-control form-floating bg-light p-3 shadow-none"
                 type="text"
                 placeholder="Search for a movie or tv show...."
+                value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyUp={searchQueryHandler}
               />
-              <span className="input-group-text border border-0 bg-light p-3 shadow-none">
-                <button
+              <div className="input-group-text border-0 bg-light p-3 shadow-none">
+                {query.length === 0 ? (
+                  <span />
+                ) : (
+                  <VscChromeClose
+                    type="button"
+                    onClick={() => resetForm()}
+                    className="btn-close shadow-none"
+                    aria-label="Clear the query"
+                  />
+                )}
+                {/* <button
                   type="reset"
                   onClick={() => resetForm()}
                   className="btn-close shadow-none"
                   aria-label="Clear the query"
-                />
-              </span>
+                /> */}
+              </div>
             </Modal.Body>
           </Modal>
         </ContentWrapper>
