@@ -48,7 +48,7 @@ const Header = () => {
       setTimeout(() => {
         setShows(false);
         setQuery("");
-      }, 1000);
+      }, 500);
     }
   };
 

@@ -38,7 +38,7 @@ function App() {
 
   const genresCall = async () => {
     let promises = [];
-    let endPoints = ["tv", "movie", "person"];
+    let endPoints = ["tv", "movie", "people"];
     let allGenres = {};
 
     endPoints.forEach((url) => {
