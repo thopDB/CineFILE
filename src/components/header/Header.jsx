@@ -115,9 +115,9 @@ const Header = () => {
           >
             <Modal.Body className="input-group">
               <form className="input-group">
-                {/* <span className="input-group-text border border-0 bg-light p-3 bg-opacity-0"> */}
-                <GoSearch className=" border border-0 bg-opacity-0 bg-light" />
-                {/* </span> */}
+                <span className="input-group-text border border-0 bg-light p-3 bg-opacity-0">
+                  <GoSearch />
+                </span>
                 <input
                   className="border border-0 form-control form-floating bg-light p-3 shadow-none"
                   type="text"
