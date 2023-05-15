@@ -72,7 +72,7 @@ const Header = () => {
     } else if (type === "tv") {
       navigate("/explore/tv");
     } else {
-      navigate("/people");
+      navigate("/person");
     }
     setMobileMenu(false);
   };
@@ -90,7 +90,7 @@ const Header = () => {
           <li className="menuItem" onClick={() => navigationHandler("tv")}>
             TV Shows
           </li>
-          <li className="menuItem" onClick={() => navigationHandler("people")}>
+          <li className="menuItem" onClick={() => navigationHandler("person")}>
             People
           </li>
           <li className="menuItem">
