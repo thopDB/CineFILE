@@ -2,7 +2,7 @@ import React from "react";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import Img from "../../components/lazyLoadImage/Img";
 import cinefile from "../../assets/cinefile.png";
-import logo from "../../../public/logo.png";
+import logo from "../../assets/logo.png";
 import "./style.scss";
 
 const About = () => {
