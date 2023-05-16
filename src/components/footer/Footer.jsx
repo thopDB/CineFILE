@@ -5,9 +5,7 @@ import {
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
-
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-
 import "./style.scss";
 
 const Footer = () => {
@@ -15,11 +13,25 @@ const Footer = () => {
     <footer className="footer">
       <ContentWrapper>
         <ul className="menuItems">
-          <li className="menuItem">Terms</li>
-          <li className="menuItem">Privacy Policy</li>
-          <li className="menuItem">About</li>
-          <li className="menuItem">Blog</li>
-          <li className="menuItem">FAQ</li>
+          <a className="menuItem" href="/terms">
+            Terms
+          </a>
+          <a className="menuItem" href="/privacy">
+            Privacy Policy
+          </a>
+          <a className="menuItem" href="/about">
+            About
+          </a>
+          <a className="menuItem" href="/blog">
+            Blog
+          </a>
+          <a
+            className="menuItem"
+            href="https://github.com/sumandey07/CineFILE/discussions/new?category=q-a"
+            target="_blank"
+          >
+            FAQ
+          </a>
         </ul>
         <div className="infoText">
           Thank you for using the best Movie Info Database. If you like this

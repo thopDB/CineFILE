@@ -12,7 +12,11 @@ import SearchResult from "./pages/searchResult/SearchResult";
 import Explore from "./pages/explore/Explore";
 import Persondetail from "./pages/personDetail/Persondetail";
 import Person from "./pages/person/Person";
+import Privacy from "./pages/privacy/Privacy";
+import Terms from "./pages/terms/Terms";
+import Blog from "./pages/blog/Blog";
 import PageNotFound from "./pages/404/PageNotFound";
+import About from "./pages/about/About";
 
 function App() {
   const dispatch = useDispatch();
@@ -96,6 +100,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/person/:id" element={<Persondetail />} />
         <Route path="/search/:query" element={<SearchResult />} />
         <Route path="/explore/:mediaType" element={<Explore />} />
