@@ -4,7 +4,7 @@ import "./style.scss";
 import useFetch from "../../hooks/useFetch";
 import DetailsBanner from "../details/detailsBanner/DetailsBanner";
 
-const Persondetail = () => {
+const Persondetail = ({}) => {
   const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/${mediaType}/${id}/videos`);
   const { data: credits, loading: creditsLoading } = useFetch(

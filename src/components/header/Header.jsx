@@ -5,7 +5,6 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import "./style.scss";
-
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/cinefile.svg";
 
@@ -133,12 +132,6 @@ const Header = () => {
                     aria-label="Clear the query"
                   />
                 )}
-                {/* <button
-                  type="reset"
-                  onClick={() => resetForm()}
-                  className="btn-close shadow-none"
-                  aria-label="Clear the query"
-                /> */}
               </div>
             </Modal.Body>
           </Modal>

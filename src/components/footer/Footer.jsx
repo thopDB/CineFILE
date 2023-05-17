@@ -1,49 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import "./style.scss";
 
 const Footer = () => {
+  const redirect = () => {
+    window.open(
+      "https://github.com/sumandey07/CineFILE/discussions/new?category=q-a",
+      "_blank"
+    );
+  };
+
   return (
     <footer className="footer">
       <ContentWrapper>
         <ul className="menuItems">
-          <a className="menuItem" href="/terms">
+          <NavLink className="menuItem" to="/terms">
             Terms
-          </a>
-          <a className="menuItem" href="/privacy">
+          </NavLink>
+          <NavLink className="menuItem" to="/privacy">
             Privacy Policy
-          </a>
-          <a className="menuItem" href="/about">
+          </NavLink>
+          <NavLink className="menuItem" to="/about">
             About
-          </a>
-          <a className="menuItem" href="/blog">
+          </NavLink>
+          <NavLink className="menuItem" to="/blog">
             Blog
-          </a>
-          <a
-            className="menuItem"
-            href="https://github.com/sumandey07/CineFILE/discussions/new?category=q-a"
-            target="_blank"
-          >
+          </NavLink>
+          <span className="menuItem" onClick={() => redirect()}>
             FAQ
-          </a>
+          </span>
         </ul>
         <div className="infoText">
           Thank you for using the best Movie Info Database. If you like this
-          website then don't forget to give it a star on{" "}
-          <a href="https://github.com/sumandey07/CineFILE" target="_blank">
-            Github
-          </a>{" "}
-          ⭐ This is a open-source website available on{" "}
+          website then don't forget to give it a star ⭐ on{" "}
           <a href="https://github.com/sumandey07/CineFILE" target="_blank">
             Github
           </a>
-          . Visit Again.
+          . Source Code is available on{" "}
+          <a href="https://github.com/sumandey07/CineFILE" target="_blank">
+            Github
+          </a>
+          . You can also support us by donating on{" "}
+          <a href="https://www.buymeacoffee.com/sumankumarQ" target="_blank">
+            Buy Me a Coffee
+          </a>{" "}
+          🍕. Visit Again.
         </div>
         <div className="socialIcons">
           <a href="https://www.facebook.com/SD0919/" target="_blank">

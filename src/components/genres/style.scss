@@ -1,6 +1,7 @@
 .genres {
     display: flex;
-    gap: 5px;
+    gap: 8px;
+
     .genre {
         background-color: var(--pink);
         padding: 3px 5px;
@@ -8,5 +9,11 @@
         border-radius: 4px;
         color: white;
         white-space: nowrap;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--black);
+            animation: trailorPlay 0.5s ease-in-out;
+        }
     }
 }

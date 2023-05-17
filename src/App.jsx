@@ -17,6 +17,7 @@ import Terms from "./pages/terms/Terms";
 import Blog from "./pages/blog/Blog";
 import PageNotFound from "./pages/404/PageNotFound";
 import About from "./pages/about/About";
+import ScrollArrow from "./components/scrollArrow/ScrollArrow";
 
 function App() {
   const dispatch = useDispatch();
@@ -110,6 +111,7 @@ function App() {
         <Route path="/person" element={<Person />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <ScrollArrow />
       <Footer />
     </BrowserRouter>
   );

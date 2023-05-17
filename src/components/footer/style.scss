@@ -25,7 +25,7 @@
             gap: 30px;
         }
 
-        a {
+        .menuItem {
             text-decoration: none;
             color: azure;
             transition: all ease 0.2s;
@@ -85,7 +85,6 @@
             transition: all ease 0.3s;
 
             &:hover {
-                // box-shadow: 0 0 0.625em var(--pink);
                 color: var(--pink);
             }
         }
