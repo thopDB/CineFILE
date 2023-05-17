@@ -16,12 +16,11 @@
         list-style-type: none;
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 15px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
 
         @include md {
-            margin-bottom: 30px;
+            margin-bottom: 50px;
             gap: 30px;
         }
 
@@ -44,20 +43,21 @@
 
     .infoText {
         font-size: 12px;
-        line-height: 20px;
+        line-height: 25px;
         opacity: 0.5;
         text-align: center;
-        max-width: 800px;
-        margin-bottom: 20px;
+        max-width: 1100px;
+        padding-bottom: 15px;
 
         @include md {
             font-size: 14px;
-            margin-bottom: 30px;
+            padding-bottom: 25px;
         }
 
         a {
             text-decoration: none;
             color: azure;
+            opacity: 0.7;
 
             &:hover {
                 color: var(--pink);
@@ -65,27 +65,44 @@
         }
     }
 
-    .socialIcons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 35px;
+    .detail {
+        padding-top: 30px;
+        gap: 100px;
 
-        a {
-            color: azure;
+        .copyright {
+            align-items: flex-start;
+            padding-right: 260px;
         }
 
-        .icon {
-            width: 20px;
-            height: 20px;
+        .image {
+            align-self: center;
+            max-width: 40px;
+            max-height: 40px;
+        }
+
+        .socialIcons {
+            padding-left: 260px;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all ease 0.3s;
+            gap: 35px;
 
-            &:hover {
-                color: var(--pink);
+            a {
+                color: azure;
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all ease 0.3s;
+
+                &:hover {
+                    color: var(--pink);
+                }
             }
         }
     }

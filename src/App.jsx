@@ -111,8 +111,8 @@ function App() {
         <Route path="/person" element={<Person />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      <ScrollArrow />
       <Footer />
+      <ScrollArrow />
     </BrowserRouter>
   );
 }

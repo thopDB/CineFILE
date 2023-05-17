@@ -1,6 +1,7 @@
 @import "../../mixins.scss";
 
 .about {
+    font-family: Arial, sans-serif;
     min-height: 650px;
     padding-top: 170px;
     align-items: center;
@@ -9,8 +10,6 @@
 
     .part {
         align-items: center;
-        display: flex;
-        flex-direction: column;
         position: relative;
 
         .first {
@@ -34,8 +33,32 @@
             }
         }
 
-        .third {
+        .second {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding-bottom: 40px;
 
+            .para {
+                color: gainsboro;
+                font-weight: 900;
+                font-size: 30px;
+            }
+
+            .paras {
+                text-decoration: none;
+                cursor: pointer;
+                color: azure;
+                font-weight: 400;
+                font-size: 30px;
+
+                &:hover {
+                    color: var(--pink);
+                }
+            }
+        }
+
+        .third {
             .paragraph {
                 gap: 10px;
                 color: white;

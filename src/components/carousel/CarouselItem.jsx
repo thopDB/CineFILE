@@ -1,8 +1,5 @@
 import React, { useRef } from "react";
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/bs";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
@@ -44,11 +41,11 @@ const CarouselItem = ({ data, loading, title }) => {
     <div className="carousel">
       <ContentWrapper>
         {title && <div className="carouselTitle">{title}</div>}
-        <BsFillArrowLeftCircleFill
+        <FaArrowAltCircleLeft
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}
         />
-        <BsFillArrowRightCircleFill
+        <FaArrowAltCircleRight
           className="carouselRighttNav arrow"
           onClick={() => navigation("right")}
         />

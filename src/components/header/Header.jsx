@@ -6,7 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import "./style.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import logo from "../../assets/cinefile.svg";
+import logo from "../../assets/cinefile.png";
 
 const Header = () => {
   const [show, setShow] = useState("top");

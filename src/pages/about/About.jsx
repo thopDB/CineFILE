@@ -35,7 +35,14 @@ const About = () => {
               <Img className="logoImg" src={cinefile} />
             </div>
             <div className="second">
-              
+              <p className="para">Developed By :</p>
+              <a
+                className="paras"
+                href="https://www.linkedin.com/in/iamsumandey/"
+                target="_blank"
+              >
+                Suman Dey
+              </a>
             </div>
             <div className="third">
               <p className="paragraph">

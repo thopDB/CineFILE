@@ -1,5 +1,7 @@
+@import "../../mixins.scss";
+
 .scroll {
-    opacity: 50;
+    opacity: 0.3;
 
     .scrollTop {
         position: fixed;
@@ -16,6 +18,6 @@
     }
 
     &:hover {
-        opacity: 100;
+        opacity: 1;
     }
 }
