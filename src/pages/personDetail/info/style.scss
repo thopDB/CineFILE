@@ -1,6 +1,6 @@
 @import "../../../mixins.scss";
 
-.detailsBanner {
+.detailsBanners {
     width: 100%;
     background-color: var(--black);
     padding-top: 100px;
@@ -17,8 +17,8 @@
         height: 100%;
         position: absolute;
         top: 0;
-        right: 0;
-        opacity: 0.2;
+        left: 0;
+        opacity: 0.1;
         overflow: hidden;
 
         .lazy-load-image-background {
@@ -88,7 +88,7 @@
                 line-height: 24px;
                 margin-bottom: 15px;
                 font-style: italic;
-                opacity: 0.6;
+                opacity: 0.5;
 
                 @include md {
                     font-size: 20px;
@@ -111,11 +111,9 @@
 
                 .description {
                     line-height: 24px;
-                    font-size: 13px;
 
                     @include md {
                         padding-right: 90px;
-                        font-size: 15px;
                     }
                 }
             }
@@ -124,83 +122,39 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-between;
+                gap: 25px;
                 margin-top: 40px;
                 margin-bottom: 40px;
+                gap: 90px;
 
-                .score {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 5px;
+                .circleRating {
+                    max-width: 70px;
+                    background-color: var(--black2);
+                    cursor: pointer;
+                    margin-left: 4px;
 
                     @include md {
-                        gap: 25px;
+                        max-width: 90px;
                     }
 
-                    .circleRating {
-                        max-width: 80px;
-                        background: var(--black2);
-                        cursor: pointer;
-                        margin-left: 4px;
-
-                        @include md {
-                            max-width: 98px;
-                        }
-
-                        .CircularProgressbar-text {
-                            fill: white;
-                        }
-
-                    }
-
-                    .infos {
-                        display: flex;
-                        flex-direction: column;
-                        padding-left: 4px;
-
-                        @include md {
-                            padding-left: 0;
-                        }
-
-                        .info1 {
-                            padding-top: 18px;
-                            font-size: 17px;
-
-                            @include md {
-                                padding-top: 23px;
-                                font-size: larger;
-                            }
-                        }
-
-                        .info2 {
-                            padding-top: 6px;
-                            font-size: 17px;
-
-                            @include md {
-                                font-size: larger;
-                            }
-                        }
+                    .CircularProgressbar-text {
+                        fill: white;
                     }
                 }
 
                 .playbtn {
                     display: flex;
                     align-items: center;
-                    padding-right: 14px;
-                    gap: 6px;
+                    gap: 10px;
                     cursor: pointer;
 
-                    @include md {
-                        gap: 12px;
-                        padding-right: 240px;
-                    }
-
                     .text {
-                        font-size: 18px;
+                        font-size: 22px;
                         transition: all 0.4s ease-in-out;
                     }
 
                     .icon {
+                        transform: translateY(0);
                         transition: all 0.4s ease-in-out;
                     }
 

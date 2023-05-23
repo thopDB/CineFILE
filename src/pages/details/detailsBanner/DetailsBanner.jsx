@@ -9,12 +9,14 @@ import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import Img from "../../../components/lazyLoadImage/Img.jsx";
 import PosterFallback from "../../../assets/no-poster.png";
-import { SlControlPlay } from "react-icons/sl";
+import { FaPlay } from "react-icons/fa";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 
 const DetailsBanner = ({ video, crew }) => {
+  let keys, names;
   const [show, setShow] = useState(false);
   const [videoId, setVideoId] = useState(null);
+  const [value, setValue] = useState("");
   const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/${mediaType}/${id}`);
   const { url } = useSelector((state) => state.home);
@@ -23,6 +25,19 @@ const DetailsBanner = ({ video, crew }) => {
   const writer = crew?.filter(
     (f) => f.job === "Screenplay" || f.job === "Story" || f.job === "Writer"
   );
+
+  for (let i = 0; i < video?.length; i++) {
+    const videoType = video[i].type;
+    if (
+      videoType === "Trailer" ||
+      videoType === "Teaser" ||
+      videoType === "Official Trailer" ||
+      videoType === "Clip"
+    ) {
+      names = video[i].name;
+      keys = video[i].key;
+    }
+  }
 
   const toHoursAndMinutes = (totalMinutes) => {
     const hours = Math.floor(totalMinutes / 60);
@@ -59,22 +74,32 @@ const DetailsBanner = ({ video, crew }) => {
                       ).format("YYYY")})`}
                     </div>
                     <div className="subtitle">{data.tagline}</div>
-                    <Genres data={_genres} className="genres" />
+                    <Genres
+                      data={_genres}
+                      media={mediaType}
+                      className="genres"
+                    />
 
-                    <div className="row">
-                      <span>
-                        <CircleRating rating={data.vote_average.toFixed(1)} />
-                      </span>
+                    <div className="rows">
+                      <div className="score">
+                        <CircleRating
+                          className="circleRating"
+                          rating={data.vote_average.toFixed(1)}
+                        />
+                        <div className="infos">
+                          <span className="info1">User</span>
+                          <span className="info2">Score</span>
+                        </div>
+                      </div>
                       <div
                         className="playbtn"
                         onClick={() => {
                           setShow(true);
-                          setVideoId(video.key);
+                          setValue(names);
+                          setVideoId(keys);
                         }}
                       >
-                        <span>
-                          <SlControlPlay size={20} />
-                        </span>
+                        <FaPlay className="icon" size={19} />
                         {mediaType === "movie" ? (
                           <span className="text">Watch Trailer</span>
                         ) : (
@@ -159,6 +184,8 @@ const DetailsBanner = ({ video, crew }) => {
                 <VideoPopup
                   show={show}
                   setShow={setShow}
+                  value={value}
+                  setValue={setValue}
                   videoId={videoId}
                   setVideoId={setVideoId}
                 />

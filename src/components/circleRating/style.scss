@@ -1,26 +1,37 @@
 .circleRating {
     background-color: var(--black);
     border-radius: 50%;
-    padding: 2px;
+    padding: 6px;
     cursor: pointer;
 
     .CircularProgressbar-text {
         font-size: 34px;
         font-weight: 700;
         fill: var(--black);
+    }
 
-        &:hover {
-            font-size: 250%;
-        }
+    .CircularProgressbar-background {
+        color: var(--black);
     }
 
     .CircularProgressbar-trail {
         stroke: transparent;
+
+        &:hover {
+            padding: 0px;
+        }
+    }
+
+    .CircularProgressbar-path {
+        fill: var(--black);
+
+        &:hover {
+            padding: 0px;
+        }
     }
 
     &:hover {
-        box-shadow: 0 0 1em var(--pink);
-        border-radius: 90%;
-        box-sizing: 250%;
+        padding: 2px;
+        transition: all 0.2s ease-in-out;
     }
 }

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import Img from "../lazyLoadImage/Img";
-import PosterFallback from "../../assets/no-poster.png";
+import avatar from "../../assets/avatar.png";
 import "./styles.scss";
 
 const CarouselItem = ({ data, loading, title }) => {
@@ -28,7 +28,7 @@ const CarouselItem = ({ data, loading, title }) => {
 
   const skItem = () => {
     return (
-      <div className="skeletonItem">
+      <div className="skeletonItems">
         <div className="posterBlock skeleton"></div>
         <div className="textBlock">
           <div className="title skeleton"></div>
@@ -38,9 +38,8 @@ const CarouselItem = ({ data, loading, title }) => {
   };
 
   return (
-    <div className="carousel">
+    <div className="carousels">
       <ContentWrapper>
-        {title && <div className="carouselTitle">{title}</div>}
         <FaArrowAltCircleLeft
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}
@@ -54,7 +53,7 @@ const CarouselItem = ({ data, loading, title }) => {
             {data?.map((item) => {
               const posterUrl = item.profile_path
                 ? url.poster + item.profile_path
-                : PosterFallback;
+                : avatar;
               return (
                 <div
                   key={item.id}

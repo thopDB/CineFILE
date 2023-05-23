@@ -1,14 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
+import { useNavigate } from "react-router-dom";
 import "./style.scss";
-
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import Img from "../../../components/lazyLoadImage/Img";
 import avatar from "../../../assets/avatar.png";
 
 const Cast = ({ data, loading }) => {
   const { url } = useSelector((state) => state.home);
+  const navigate = useNavigate();
 
   const skeleton = () => {
     return (
@@ -33,7 +33,7 @@ const Cast = ({ data, loading }) => {
                 <div
                   key={item.id}
                   className="listItem"
-                  onClick={() => console.log("Clicked")}
+                  onClick={() => navigate(`/person/${item.id}`)}
                 >
                   <div className="profileImg">
                     <Img src={imgUrl} />
