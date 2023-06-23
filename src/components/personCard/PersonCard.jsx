@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 const PersonCard = ({ data, fromSearch }) => {
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
-  const posterUrl = data.profile_path ? url.poster + data.profile_path : avatar;
+  const posterUrl = data.profile_path
+    ? url.profile + data.profile_path
+    : avatar;
   return (
     <div className="personCard" onClick={() => navigate(`/person/${data.id}`)}>
       <div className="posterBlock">
