@@ -111,6 +111,7 @@ const DetailsBanner = ({ video, crew }) => {
                     <div className="overview">
                       <div className="heading">Overview</div>
                       <div className="description">{data.overview}</div>
+                      <p>{id}and {data.id} </p>
                     </div>
 
                     <div className="info">
